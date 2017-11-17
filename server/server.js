@@ -1,3 +1,5 @@
+require('./config/config');
+
 const path = require('path');
 const express = require('express');
 
@@ -12,6 +14,8 @@ app.use('/', express.static(publicPath));
 
 
 // start server
-app.listen(3000, () => {
-    console.log('Listening on port 3000')
-});
+if(!module.parent) {
+    app.listen(process.env.PORT, () => {
+        console.log(`Server started at port ${process.env.PORT}`);
+    });
+}
