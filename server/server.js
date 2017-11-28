@@ -14,6 +14,13 @@ var server = http.createServer(app);
 var io = socketio(server);
 io.on('connection', (socket) => {
     console.log ('Incomming conection from browser');
+
+    socket.on('createMessage', (data) => {
+        console.log('createMessage', data);
+        data.createdOn = new Date().getTime();
+        socket.emit('newMessage', data);
+    });
+
     socket.on('disconnect', () => {
         console.log ('user disconnected');
     });
