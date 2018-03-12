@@ -6,6 +6,16 @@ const generateMessage = (from, text) => {
     };
 };
 
+const generateLocationMessage = (from, latitude, longitude) => {
+    let mapsURL = `https://www.google.com/maps/search/${latitude},${longitude}`;
+    return {
+        from,
+        url: mapsURL,
+        createdOn:new Date().getTime()
+    }
+};
+
 module.exports = {
-    generateMessage
+    generateMessage,
+    generateLocationMessage
 };
