@@ -51,6 +51,15 @@
         </li>
     </script>
 
+    <script type="text/template" id="user-list-template">
+        <ul>
+            {{#userList}}
+            <li>{{.}}</li>
+            {{/userList}}
+        </ul>
+    </script>
+
+    <script type="application/javascript" src="js/lib/deparam.js"></script>
     <script type="application/javascript" src="js/chat.js"></script>
 </body>
 </html>

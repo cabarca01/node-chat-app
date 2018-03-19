@@ -10,10 +10,14 @@
   "engines": {
     "node": "8.4.0"
   },
+  "jest": {
+    "verbose": true
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
+    "lodash": "^4.17.5",
     "moment": "^2.21.0",
     "nodemon": "^1.12.1",
     "socket.io": "^2.0.4"
